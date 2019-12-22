@@ -11,10 +11,9 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SearchPipe } from './search.pipe';
 
 @NgModule({
-  declarations: [AppComponent, SearchPipe],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule, 

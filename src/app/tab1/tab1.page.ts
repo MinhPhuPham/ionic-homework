@@ -8,21 +8,36 @@ import { sings } from '../../assets/data/data'
 export class Tab1Page {
   title = 'Music'
   listsings;
-  sings
+  sings;
+  sorted_name: { key: string; sings_detail: any; }[];
   constructor() { }
+  isShow = false;
+ 
+  toggleDisplay() {
+    this.isShow = !this.isShow;
+  }
   ngOnInit() {
   this.listsings= sings.map((sings,i)=> sings);
   this.sings=this.listsings; 
-  // this.sings.sort(function(a,b){
-  //   var lccomp = a.name.toLowerCase().localeCompare(b.name.toLowerCase());
-  //   return lccomp ? lccomp : a.name > b.name ? 1 : a.name < b.name ? -1 : 0;
-  // });
+  console.log(this.Group_sorted);  
+  this.sorted_name= this.Group_sorted.filter(item=>{
+    return item.sings_detail;
+  })
  }
-//  SortSong(sings){
-//    const sortedSong =this.sings.sort((a,b)=>{
-//     var lccomp = a.Name.toLowerCase().localeCompare(b.Name.toLowerCase());
-//     return 
-//    })
-//  }
- 
+
+
+  sorted = sings.sort((a, b) => a.Name > b.Name ? 1 : -1);
+  grouped = this.sorted.reduce((groups, sing_detail) => {
+  const letter = sing_detail.Name.charAt(0);
+
+  groups[letter] = groups[letter] || [];
+  groups[letter].push(sing_detail);
+
+  return groups;
+}, {});
+
+Group_sorted = Object.keys(this.grouped).map(key => ({key, sings_detail: this.grouped[key]}));
+
+
+
 }
