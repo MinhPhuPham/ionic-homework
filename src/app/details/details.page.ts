@@ -15,7 +15,9 @@ export class DetailsPage implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       const Id = params.get('Id');
-      this.detailSong = this.dataService.getSongs(Id);
+      this.detailSong = this.listsings.find(sing => {
+        return sing.Id === Id
+      })[0]
     });
   }
 

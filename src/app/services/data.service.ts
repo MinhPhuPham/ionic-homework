@@ -11,10 +11,9 @@ listsings;
     this.listsings= sings.map((sings,i)=> sings);
   }
   getSongs(Id) {
-    return { ...this.listsings.find(Song => {
-      return Song.Id=Id;
-    })
-    };
-
+ let find_id= this.listsings.find(id=>{
+   return id.id===Id;
+ })
+ return Id;
   }
 }

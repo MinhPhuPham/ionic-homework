@@ -7,13 +7,13 @@
 </ion-header>
 
 <ion-content>
-  <ion-searchbar animated [(ngModel)]="term"></ion-searchbar>
+  <ion-searchbar [(ngModel)]="terms"></ion-searchbar>
   <ion-list>
     <ion-list-header>
       <!-- <ion-item-divider color="medium">{{group.letter}}</ion-item-divider> -->
       </ion-list-header>
   <ion-item-sliding>
-    <ion-item *ngFor="let song of sings|filter:term" [routerLink]="['details/' , song.Id]  ">
+    <ion-item *ngFor="let song of sings" [routerLink]="['details/' , song.Id]  ">
         <ion-avatar slot="start">
             <img src="{{song.image}}">
           </ion-avatar>
