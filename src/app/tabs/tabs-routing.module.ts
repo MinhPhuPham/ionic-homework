@@ -37,7 +37,11 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>import('../tab3/tab3.module').then(m => m.Tab3PageModule)
-          }
+          },
+          {
+            path: 'detail-films/:episode_id',
+            loadChildren: () => import('../detail-films/detail-films.module').then( m => m.DetailFilmsPageModule)
+          },
         ]
       },
       {

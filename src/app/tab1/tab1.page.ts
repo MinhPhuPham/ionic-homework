@@ -19,7 +19,7 @@ export class Tab1Page {
   ngOnInit() {
   this.listsings= sings.map((sings,i)=> sings);
   this.sings=this.listsings; 
-  console.log(this.Group_sorted);  
+  
   this.sorted_name= this.Group_sorted.filter(item=>{
     return item.sings_detail;
   })

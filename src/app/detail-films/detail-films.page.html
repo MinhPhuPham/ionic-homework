@@ -1,0 +1,32 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf='detail_films'>{{detail_films.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen padding scroll-y="false">
+  <ion-slides *ngIf='detail_films'>
+
+    <ion-slide>
+      <ion-card >
+        <!-- <img src="../../assets/image/dangtheluan.jpg" /> -->
+        <ion-card-header>
+          <ion-card-subtitle>{{detail_films.episode_id}}</ion-card-subtitle>
+          <ion-card-title>director: {{detail_films.director}}</ion-card-title>
+          <ion-card-title>producer: {{detail_films.producer}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          {{detail_films.opening_crawl}}
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide fullscreen>
+      {{detail_films.opening_crawl}}
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>
